@@ -1,18 +1,22 @@
 * {
 	box-sizing: border-box;
-	transition: 800ms ease-in-out;
+}
+
+a, a:hover, a:visited {
+	color: inherit;
+	text-decoration: none;
 }
 
 @font-face {
-	font-family: 'Klavika';
-	src: url('./font/klavika/klavika-regular-webfont.eot') format('eot'),
-			 url('./font/klavika/klavika-regular-webfont.woff') format('woff');
+	font-family: 'Klavika', 'BlinkMacSystemFont', "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+	src: url('../font/klavika/klavika-regular-webfont.eot') format('eot'),
+			 url('../font/klavika/klavika-regular-webfont.woff') format('woff');
 }
 
 @font-face {
-	font-family: 'Klavika light';
-	src: url('./font/klavika/klavika-light-webfont.eot') format('eot'),
-			 url('./font/klavika/klavika-light-webfont.woff') format('woff');
+	font-family: 'Klavika-Light', 'BlinkMacSystemFont', "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", sans-serif;
+	src: url('../font/klavika/klavika-light-webfont.eot') format('eot'),
+			 url('../font/klavika/klavika-light-webfont.woff') format('woff');
 }
 
 body {
@@ -22,32 +26,39 @@ body {
 	color: #fff;
 }
 
-#container {
-	background-color: black;
-	background-image: url('./image/background.jpg');
-	background-size: cover;
-	background-position: 0px;
-	background-repeat: no-repeat;
+.bg_container {
 	width: 100vw;
 	height: 100vh;
-	transition: background 1500ms;
 }
 
-#button--next {
-	font-size: 80px;
-	width: 100px;
+#bg_image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	z-index: 10;
+	transition: 1100ms ease-in-out;
+}
 
+#arrow--next, #arrow--back {
+	font-size: 120px;
+	width: 100px;
 	position: fixed;
-	right: 0;
 	top: 0;
 	height: 100vh;
 	z-index: 200;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	transition: 100ms ease-in-out;
+}
+
+#arrow--next {
+	right: 0;
+}
+
+#arrow--back {
+	left: 0;
 }
 
 #button--next:hover, #button--back:hover {
@@ -56,32 +67,10 @@ body {
 	transition: 100ms ease-in-out;
 }
 
-#button--back {
-	font-family: 'Klavika light';
-	font-size: 80px;
-	font-weight: 100;
-	width: 100px;
-
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 100vh;
-	z-index: 202;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	transition: 100ms ease-in-out;
-}
-
 .logo {
 	position: fixed;
 	right: 25px;
 	bottom: 25px;
-}
-
-.logo img {
 	height: 50px;
 }
 
@@ -107,6 +96,10 @@ body {
 	flex: 1;
 }
 
+#navigation li:first-child {
+	border-left: none;
+}
+
 #navigation li p {
 	margin: 0;
 	width: 100%;
@@ -121,8 +114,8 @@ body {
 	margin: 1px;
 }
 
-#navigation li:first-child {
-	border-left: none;
+article {
+	transition: 500ms ease-in-out;
 }
 
 #article--0 {
@@ -149,6 +142,13 @@ body {
 	z-index: 100;
 }
 
+#article--9 {
+	position: fixed;
+	top: 25px;
+	right: 25px;
+	z-index: 1;
+}
+
 .text-align-right {
 	text-align: right;
 }
@@ -164,7 +164,7 @@ body {
 
 .article--paragraph {
 	font-size: 14px;
-	font-family: 'Klavika light';
+	font-family: 'Klavika-Light';
 	position: fixed;
 	left: 25px;
 	bottom: 110px;
@@ -173,8 +173,35 @@ body {
 
 .article--description {
 	font-size: 14px;
-	font-family: 'Klavika light';
+	font-family: 'Klavika-Light';
 	position: fixed;
 	bottom: 25px;
 	left: 300px;
+}
+
+.article--join {
+	position: fixed;
+	right: 25px;
+	top: 40%;
+	font-size: 14px;
+	font-family: 'Klavika-Light';
+}
+
+.article--join a {
+	border-bottom: 1px solid #fff;
+}
+
+.article--social {
+	top: 50%;
+	position: fixed;
+	right: 25px;
+	list-style-type: none;
+	padding: 0;
+	font-size: 14px;
+	font-family: 'Klavika-Light';
+}
+
+.article--social li {
+	display: inline-block;
+	margin-left: 20px;
 }
