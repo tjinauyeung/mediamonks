@@ -40,10 +40,20 @@ window.onload = function(){
 		renderPage(coordinates);
 	});
 
+	function checkArrowVisibility() {
+		if (currentId == 9) {
+			arrowNext.style.visibility = "hidden";
+		} else if (currentId == 0) {
+			arrowPrev.style.visibility = "hidden";
+		} else {
+			arrowNext.style.visibility = "visible";
+			arrowPrev.style.visibility = "visible";
+		}
+	}
 
-	function renderPage(position) {
+	function renderPage(coordinates) {
 		// set new bg position
-		newPosition = position;
+		newPosition = coordinates;
 		bgImage.style["transform"] = "translate(" + newPosition + lengthUnit + ", 0)";
 
 		// hide previous content
@@ -70,10 +80,13 @@ window.onload = function(){
 			currentArticle.style.opacity = 1;
 		}, 1500);
 
+		checkArrowVisibility();
 		// set previous page id to the current one 
 		prevId = currentId;
 	}
 
+	checkArrowVisibility();
 	renderPage(0);
+
 
 };

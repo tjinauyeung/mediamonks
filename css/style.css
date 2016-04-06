@@ -50,7 +50,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: 100ms ease-in-out;
+	transition: 150ms ease-in-out;
 }
 
 #arrow--next {
@@ -59,12 +59,13 @@ body {
 
 #arrow--back {
 	left: 0;
+	visibility: hidden;
 }
 
-#button--next:hover, #button--back:hover {
+#arrow--next:hover, #arrow--back:hover {
 	color: #bbb;
 	width: 90px;
-	transition: 100ms ease-in-out;
+	transition: 150ms ease-in-out;
 }
 
 .logo {
@@ -72,6 +73,7 @@ body {
 	right: 25px;
 	bottom: 25px;
 	height: 50px;
+	z-index: 10;
 }
 
 #navigation {
